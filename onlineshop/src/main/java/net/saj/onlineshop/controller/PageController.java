@@ -13,7 +13,7 @@ public class PageController {
 		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
-		mv.addObject("userClickhome", true);
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
 	
