@@ -12,6 +12,12 @@
   <spring.version>5.0.2.RELEASE</spring.version>
   </properties>
   <dependencies>
+  <!-- link backend project  -->
+  <dependency>
+	  <groupId>net.saj</groupId>
+	  <artifactId>shoppingbackend</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+ </dependency>
   <!--  Java ee -->
   	<dependency>
 	    <groupId>javax</groupId>
@@ -27,6 +33,17 @@
       <scope>test</scope>
     </dependency>
     <!--  Spring  -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${spring.version}</version>
+	    <exclusions>
+	    	<exclusion>
+	    		 <groupId>commons-logging</groupId>
+	    		 <artifactId>commons-logging</artifactId>
+	    	</exclusion>
+	    </exclusions>
+	</dependency>
     <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>

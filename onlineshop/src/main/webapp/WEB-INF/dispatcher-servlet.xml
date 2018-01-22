@@ -10,7 +10,10 @@
    http://www.springframework.org/schema/mvc/spring-mvc.xsd
    
    ">
-  <context:component-scan base-package="net.saj.onlineshop.controller" />
+  <context:component-scan base-package="net.saj.onlineshop" />
+  <context:component-scan base-package="net.saj.shoppingbackend" />
+  
+  
   <bean id="viewResolver"
   		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
   		

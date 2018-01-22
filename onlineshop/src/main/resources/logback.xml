@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%-5level %msg %d(HH:mm:ss:SS) %logger{36} %n</Pattern>
+		</encoder>
+	</appender>
+	<logger name="net.saj" level="DEBUG" additivity="false">
+		<appender-ref ref="consoleAppender"></appender-ref>
+	</logger>
+	
+	<root leve="INFO">
+		<appender-ref ref="consoleAppender"></appender-ref>
+	</root>
+</configuration>
