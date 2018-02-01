@@ -66,6 +66,9 @@
     <%@include file="singleProduct.jsp" %>
     </c:if>
     
+    <c:if test="${userClickManageProducts == true}" >
+    <%@include file="manageProducts.jsp" %>
+    </c:if>
     
     </div>
     <!-- Footer -->
@@ -82,6 +85,9 @@
     
         <!--  DataTables Bootstrap script -->
     <script src="${js}/dataTables.bootstrap.js"></script>
+    
+     <!--  DataTables Boot box script -->
+    <script src="${js}/bootbox.min.js"></script>
     
     
      <script src="${js}/myapp.js"></script>

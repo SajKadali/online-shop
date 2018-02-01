@@ -23,7 +23,7 @@ public class Category {
 	private String imageURL;
 	
 	@Column(name="is_active")
-	private boolean active= true;
+	private boolean active;
 	public int getId() {
 		return id;
 	}

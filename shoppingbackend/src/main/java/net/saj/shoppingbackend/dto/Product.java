@@ -7,9 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+//import org.springframework.web.multipart.MultipartFile;
+
+
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@SuppressWarnings("deprecation")
 @Entity
 public class Product {
 
@@ -18,10 +28,15 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String code;
+	@NotBlank(message="Please enter the Product Name!")
 	private String name ;
+	@NotBlank(message="Please enter the Brand Name!")
 	private String brand ;
+	@NotBlank(message="Please enter the Product Description!")
 	private String description;
+	
 	@Column(name="unit_price")
+	@Min(value=1, message=" The price cannot be less than 1")
 	private double unitprice;
 	private int quantity;
 	@Column(name= "is_active")
@@ -30,8 +45,12 @@ public class Product {
 	private int categoryId;
 	@Column(name= "supplier_id")
 	private int supplierId;
+	
 	private int purchases;
 	private int views;
+	
+	@Transient
+	private MultipartFile file;
 	
 	// default constructor
 	public Product(){
@@ -81,11 +100,11 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	@JsonIgnore
+	
 	public boolean isActive() {
 		return active;
 	}
-	public void setActive(boolean active) {
+	public void setActive(boolean active) {	
 		this.active = active;
 	}
 	@JsonIgnore
@@ -113,6 +132,25 @@ public class Product {
 	}
 	public void setViews(int views) {
 		this.views = views;
+	}
+	
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name
+				+ ", brand=" + brand + ", description=" + description
+				+ ", unitprice=" + unitprice + ", quantity=" + quantity
+				+ ", active=" + active + ", categoryId=" + categoryId
+				+ ", supplierId=" + supplierId + ", purchases=" + purchases
+				+ ", views=" + views + "]";
 	}
 	
 	

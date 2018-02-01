@@ -50,13 +50,13 @@
 							
 							<div class="row">
 							 
-								 <div class="col-lg-12">
+								 <div class="col-m-12" >
 								 
-									 <table id="productListTable" class="table table-striped table-bordered" style=" width:600px">
+									 <table id="productListTable" class="table table-striped table-bordered"  style="width:500px">
 									 
 										 <thead>
 										  <tr>
-										  	  <th> </th>
+										  	  <th> &#10;</th>
 											  <th> Name</th>
 											  <th> Brand </th>
 											  <th> Price </th>
@@ -67,7 +67,7 @@
 									 
 									  <tfoot>
 										  <tr>
-										  	  <th> </th>
+										  	  <th>&#10; </th>
 										  	  <th> Name</th>
 											  <th> Brand </th>
 											  <th> Price </th>
