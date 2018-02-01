@@ -307,8 +307,47 @@ $(function(){
 			        					
 			          		}
 									
-	});
+			});
 		
+	}
+	// Validation code for category
+	var $categoryForm = ${'#categoryForm'};
+	if($categoryForm.length){
+		
+		$categoryForm.validate({
+			
+			rules: {
+				
+						name:{
+								required: true,
+								minlength:2
+							},
+				
+						description: {
+								required: true
+							}
+			},
+		
+			messages: {
+						
+						name:{
+								required: 'Please enter the category name',
+								minlength:' The minlength should be less than 2 characters'
+							},
+			
+					description:{
+								required: 'Please add a description for the category!'
+						}
+								
+			},
+			
+			errorElement:'em',
+			errorPlacement: function(error, element){
+				error.addClass("help-block");
+				error.insertAfter(element);
+			}
+						
+		});
 	}
 	
 })

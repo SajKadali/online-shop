@@ -77,6 +77,10 @@
    <!--  jQuery -->
     <script src="${js}/jquery.js"></script>
     
+     <!--  jQuery Validator -->
+    <script src="${js}/jquery.validate.js"></script>
+    
+    
      <!-- Bootstrap core JavaScript -->
     <script src="${js}/bootstrap.bundle.min.js"></script>
     
